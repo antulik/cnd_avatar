@@ -1,0 +1,7 @@
+<%= image_tag image_url(params: @image.params, format: :png) %>
+
+<% @image.next_options.each do |opts| %>
+  <%= link_to url_for(params: opts) do %>
+    <%= image_tag url_for(params: opts, format: :png) %>
+  <% end %>
+<% end %>
