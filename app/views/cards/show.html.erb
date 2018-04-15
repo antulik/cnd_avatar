@@ -1,0 +1,16 @@
+<%= form_with url: card_path, method: :get, local: true do |f| %>
+  To <%= f.text_field :to, value: params[:to] %>
+  <br>
+  From <%= f.text_field :from, value: params[:from] %>
+  <br>
+  Date <%= f.date_field :date, value: params[:date] %>
+  <br>
+  Amount <%= f.select :amount, options_for_select(amount_options, params[:amount]) %>
+  <br>
+  For <%= f.text_area :text, value: params[:text], cols: 80, rows: 5 %>
+  <br>
+  <%= f.submit 'Update' %>
+<% end %>
+
+<p>Right click -> Copy Image -> Paste in Slack</p>
+<%= image_tag @image_url %>
